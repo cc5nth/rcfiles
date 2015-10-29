@@ -1,0 +1,14 @@
+poll imap-mail.outlook.com with protocol imap
+user 'kkk.cccc@outlook.com' there with password 'cccccccxxxx' is 'kkkk' here
+
+mda "/usr/bin/procmail -d %T"
+
+options
+keep
+ssl
+sslcertck
+sslcertpath /home/kkkk/Mail/certs/
+no fetchall
+
+set daemon 600
+

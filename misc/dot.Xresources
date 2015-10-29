@@ -1,0 +1,8 @@
+XTerm*locale: true
+XTerm*metaSendsEscape: true
+
+xterm*faceName: DejaVu Sans Mono:style=Book:antialias=true
+xterm*faceNameDoublesize: WenQuanYi Micro Hei Mono
+xterm*faceSize: 11
+
+XTerm*VT100.geometry: 80x35

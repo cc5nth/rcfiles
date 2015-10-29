@@ -1,0 +1,138 @@
+
+PATH=/bin:/usr/bin:/usr/local/bin
+VERBOSE=off
+DEFAULT=$HOME/Mail/g/inbox
+MAILDIR=$HOME/Mail/g
+LOGFILE=$HOME/.procmaillog
+# Recipes below this comment:
+
+
+:0:
+* ^From.*khfw@gtjas.com
+biz
+
+
+# toplanguage
+:0:
+* ^(To|Cc).*pongba@googlegroups\.com
+tl
+
+# scholarzhang
+:0:
+* ^(To|Cc).*scholarzhang-dev@googlegroups\.com
+wc
+
+# autotest-kernel
+:0:
+* ^Subject: \[Autotest\]
+* ^(To|Cc).*autotest.*@test\.kernel\.org
+at_ker
+
+# autotest-kernel
+:0:
+* ^(To|Cc).*autotest-kernel@redhat\.com
+at_ker
+
+
+# kvm_vger
+:0:
+* ^(To|Cc).*kvm.*@vger\.kernel\.org
+kvm_vger
+
+# kvm bug from sf - kvm_vger
+:0:
+* ^From.*noreply@sourceforge\.net
+* ^To.*noreply@sourceforge\.net
+* ^Subject: .*kvm-Bugs.*
+kvm_vger
+
+# autotest-kernel
+:0:
+* ^(To|Cc).*autotest.*@test\.kernel\.org
+at_ker
+
+# linux-kernel
+:0:
+* ^(To|Cc).*linux-kernel@vger\.kernel\.org
+ker
+
+:0:
+* ^(To|Cc).*git@vger\.kernel\.org
+ker
+
+
+# qemu
+:0:
+* ^(To|Cc).*qemu-devel@nongnu\.org
+qemu
+
+# bugtraq
+:0:
+* ^(To|Cc).*bugtraq@securityfocus\.com
+secinfo
+
+
+# deb sec
+:0:
+* ^(To|Cc).*debian-security.*@lists\.debian\.org
+secinfo
+
+# USN
+:0:
+* ^(To|Cc).*ubuntu-security-announce@lists\.ubuntu\.com
+secinfo
+
+
+:0:
+* ^(To|Cc).*firewall-wizards@listserv\.icsalabs\.com
+secinfo
+
+# django user and developer
+:0:
+* ^(To|Cc).*django-(users|developers)@googlegroups\.com
+dj_user
+
+# c
+:0:
+* ^(To|Cc).*comp\.lang\.c\.moderated@googlegroups\.com
+cpp
+# cpp
+:0:
+* ^(To|Cc).*comp\.lang\.c\+\+\.moderated@googlegroups\.com
+cpp
+
+# hurd
+:0:
+* ^(From).*debian-hurd-patches@alioth\.debian\.org
+hurd
+
+:0:
+* ^(To|Cc).*hurd@packages\.debian\.org
+hurd
+
+:0:
+* ^(To|Cc).*debian-hurd@lists\.debian\.org
+hurd
+
+:0:
+* ^(To|Cc).*arch-dev-public@archlinux\.org
+arch-dev-public
+
+:0:
+* ^(To|Cc).*arch-general@archlinux\.org
+arch-general
+
+:0:
+* ^(To|Cc).*arch-announce@archlinux\.org
+arch-announce
+
+:0:
+* ^(From).*alerts@infosecnews\.org
+* ^(To).*isn@infosecnews\.org
+secinfo
+
+# gnubiff
+#:0:
+#* ^(To|Cc).*gnubiff-devel@lists\.sourceforge\.net
+#gnubiff
+

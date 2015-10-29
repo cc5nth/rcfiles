@@ -1,0 +1,50 @@
+;;-*-coding: emacs-mule;-*-
+(define-abbrev-table 'Buffer-menu-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'Custom-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'apropos-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'calendar-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'comint-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'completion-list-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'diary-fancy-display-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'diary-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'eshell-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'fundamental-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'global-abbrev-table '(
+    ("devle" "devel" nil 0)
+    ("donw" "down" nil 0)
+    ("ehco" "echo" nil 0)
+    ("hte" "the" nil 2)
+    ("htis" "this" nil 1)
+    ("lokk" "look" nil 0)
+    ("lokking" "looking" nil 0)
+    ("rhack" "Acked-by: Ken Cao <ken.ccao@outlook.com>" nil 0)
+    ))
+
+(define-abbrev-table 'lisp-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'org-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'outline-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'remember-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'sh-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'shell-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'special-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'text-mode-abbrev-table '(    ))
+
+(define-abbrev-table 'vc-git-log-view-mode-abbrev-table '(    ))
+

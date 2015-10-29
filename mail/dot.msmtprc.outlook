@@ -1,0 +1,14 @@
+#############################
+account default
+host smtp-mail.outlook.com
+port 587
+from kkk.cccc@outlook.com
+tls on
+tls_starttls on
+#tls_certcheck off
+#tls_trust_file /home/xxxx/Mail/certs/Equifax_Secure_CA.pem
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+auth on
+user kkk.cccc@outlook.com
+password cxxxxxxxxxx
+logfile ~/.msmtp.log

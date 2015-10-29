@@ -1,0 +1,14 @@
+[core]
+	editor = vim
+[user]
+	name = kcao
+	email = ken.ccao@outlook.com
+[alias]
+	br = branch
+	co = checkout
+	ci = commit
+	st = status
+[color]
+	ui = true
+[push]
+	default = simple

@@ -1,0 +1,15 @@
+vbell on
+vbellwait 999                   # Seconds to pause the screen for visual bell
+
+activity "Activity in %t(%n)"
+
+escape ^jj   # ctrl-j for meta
+
+autodetach on
+startup_message off
+
+caption always "%w"
+hardstatus alwayslastline "%c %D %M %d, %Y %H "
+
+defscrollback 2048
+
