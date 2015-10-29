@@ -1,7 +1,7 @@
 [core]
 	editor = vim
 [user]
-	name = kcao
+	name = Ken Cao
 	email = ken.ccao@outlook.com
 [alias]
 	br = branch
@@ -12,3 +12,6 @@
 	ui = true
 [push]
 	default = simple
+[sendemail]
+	smtpserver = /usr/bin/msmtp
+	confirm = auto
