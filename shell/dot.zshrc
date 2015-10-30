@@ -37,6 +37,7 @@ fi
 case $TERM in
     xterm*|gnome*)
         chpwd_title() {print -Pn "\e]0;%n@%m: %~\a"}
+        chpwd_title
         ;;
     screen)
         chpwd_title() {
