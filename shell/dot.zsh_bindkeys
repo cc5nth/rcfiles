@@ -1,0 +1,2 @@
+# delete-last-segment-of-the-path
+bindkey '\e^?' vi-backward-kill-word  # Alt + Backspace

@@ -5,9 +5,6 @@ SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
-# key binding
-bindkey -e
-
 # compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -49,6 +46,12 @@ esac
 # func chain when wd changed
 chpwd_functions+=(chpwd_title)
 
+# key bindings
+bindkey -e
+
+if [ -f ~/.zsh_bindkeys ]; then
+    . ~/.zsh_bindkeys
+fi
 
 # misc
 setopt nohup
