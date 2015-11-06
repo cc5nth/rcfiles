@@ -1,14 +1,23 @@
-poll imap-mail.outlook.com with protocol imap
-user 'kkk.cccc@outlook.com' there with password 'cccccccxxxx' is 'kkkk' here
-
-mda "/usr/bin/procmail -d %T"
-
-options
-keep
-ssl
-sslcertck
-sslcertpath /home/kkkk/Mail/certs/
-no fetchall
-
+set postmaster "user1"
+set bouncemail
+set logfile /home/user1/.fetchmail.log
 set daemon 600
 
+poll imap-mail.outlook.com with protocol imap port 993
+  user 'user1@outlook.com' there with password 'user1passwd' is 'user1' here
+    options
+    keep
+    ssl
+    sslcertck
+    sslcertpath /home/user1/Mail/certs/
+    no fetchall
+    mda "/usr/bin/procmail -d %T"
+
+  user 'user2@outlook.com' there with password 'user2passwd' is 'user2' here
+    options
+    keep
+    ssl
+    sslcertck
+    sslcertpath /home/user2/Mail/certs/
+    no fetchall
+    mda "/usr/bin/procmail -d %T"
