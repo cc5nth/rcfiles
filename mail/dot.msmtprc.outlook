@@ -1,14 +1,28 @@
+# Set default values for all following accounts.
+defaults
+auth           on
+tls            on
+tls_starttls   on
+tls_certcheck  on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.msmtp.log
+
 #############################
 account default
+host smtp.xxx.com
+port 465
+from xxx@xxx.com
+user xxx@xxx.com
+password xxx
+tls_starttls off
+#tls_certcheck off
+auth plain
+
+#############################
+account xxx
 host smtp-mail.outlook.com
 port 587
 from kkk.cccc@outlook.com
-tls on
-tls_starttls on
-#tls_certcheck off
-#tls_trust_file /home/xxxx/Mail/certs/Equifax_Secure_CA.pem
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-auth on
 user kkk.cccc@outlook.com
 password cxxxxxxxxxx
-logfile ~/.msmtp.log
+auth plain
