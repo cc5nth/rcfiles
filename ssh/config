@@ -1,0 +1,16 @@
+Host lan3
+     HostName 10.0.0.3
+     User user1
+
+Host lan5
+     HostName 10.0.0.5
+     User user2
+
+Host codingnet-akenn
+     User git
+     HostName git.coding.net
+     IdentityFile ~/.ssh/akenn.key
+
+Host git.coding.net
+     User git
+     IdentityFile ~/.ssh/git.default.key
