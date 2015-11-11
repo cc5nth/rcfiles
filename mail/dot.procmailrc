@@ -11,7 +11,6 @@ LOGFILE=$HOME/.procmaillog
 * ^From.*khfw@gtjas.com
 biz
 
-
 # toplanguage
 :0:
 * ^(To|Cc).*pongba@googlegroups\.com
@@ -22,17 +21,33 @@ tl
 * ^(To|Cc).*scholarzhang-dev@googlegroups\.com
 wc
 
-# autotest-kernel
+#################################################################
+# qemu
 :0:
-* ^Subject: \[Autotest\]
-* ^(To|Cc).*autotest.*@test\.kernel\.org
-at_ker
+* ^Subject: .*\[Qemu-devel\]
+* ^(To|Cc).*qemu-devel@nongnu\.org
+qemu
 
-# autotest-kernel
+# qemu-trivial
+:0:
+* ^(To|Cc).*qemu-trivial@nongnu\.org
+qemu-trivial
+
+# qemu-discuss
+:0:
+* ^(To|Cc).*qemu-discuss@nongnu\.org
+qemu-discuss
+
+# autotest-redhat
 :0:
 * ^(To|Cc).*autotest-kernel@redhat\.com
 at_ker
 
+# autotest-kernel
+:0:
+* ^Subject: .*\[Autotest\]
+* ^(To|Cc).*autotest.*@test\.kernel\.org
+at_ker
 
 # kvm_vger
 :0:
@@ -46,11 +61,6 @@ kvm_vger
 * ^Subject: .*kvm-Bugs.*
 kvm_vger
 
-# autotest-kernel
-:0:
-* ^(To|Cc).*autotest.*@test\.kernel\.org
-at_ker
-
 # linux-kernel
 :0:
 * ^(To|Cc).*linux-kernel@vger\.kernel\.org
@@ -58,19 +68,18 @@ ker
 
 :0:
 * ^(To|Cc).*git@vger\.kernel\.org
-ker
+git
 
-
-# qemu
+# and gather the mails left by previous rules
 :0:
 * ^(To|Cc).*qemu-devel@nongnu\.org
 qemu
+#################################################################
 
 # bugtraq
 :0:
 * ^(To|Cc).*bugtraq@securityfocus\.com
 secinfo
-
 
 # deb sec
 :0:
@@ -81,7 +90,6 @@ secinfo
 :0:
 * ^(To|Cc).*ubuntu-security-announce@lists\.ubuntu\.com
 secinfo
-
 
 :0:
 * ^(To|Cc).*firewall-wizards@listserv\.icsalabs\.com
@@ -131,8 +139,20 @@ arch-announce
 * ^(To).*isn@infosecnews\.org
 secinfo
 
+## social networks
+:0:
+* ^(From).*info@twitter\.com
+del
+
+:0:
+* ^(From).*slashdot@newsletters\.slashdot\.org
+del
+
+:0:
+* ^(From).*notification\+zrdopfiei\=zz@facebookmail\.com
+del
+
 # gnubiff
 #:0:
 #* ^(To|Cc).*gnubiff-devel@lists\.sourceforge\.net
 #gnubiff
-
