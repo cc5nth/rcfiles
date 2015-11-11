@@ -1,0 +1,57 @@
+
+# headers white on black
+color hdrdefault white black
+color header brightred black ^From:
+color header brightyellow black ^To:
+color header brightgreen black ^Subject:
+
+# body
+color normal default default # plain text
+
+#  Coloring quoted text - coloring the first 7 levels:
+color quoted    red default
+color quoted1   red default
+color quoted2   red default
+color quoted3   red default
+color quoted4   red default
+color quoted5   red default
+color quoted6   red default
+color quoted7   red default
+
+#
+color markers brightcyan default # the + for wrapped pager lines
+color attachment brightmagenta default
+color signature red default # signature (after "-- ") is red
+
+#  Colorize smileys:  :-)  ;-)  :-/  :-(
+#color body  yellow white "[;:]-[)/(|]"
+#color body  yellow white "[;:][)/(|]"
+#color body  green white "[[:alpha:]]\+://[^ ]*"
+
+# index
+color index red default ~N      # New
+color index cyan default ~O     # Old
+color index magenta white ~F
+color index green white ~T
+color index brightyellow black ~D
+
+# Any message in the index that matches the pattern "boss"
+# will have a bright red foreground and a black background
+#color index brightred white boss
+
+# currently selected message
+mono indicator reverse
+#color indicator black white
+
+color tree red default # thread tree in index menu is magenta
+color error brightwhite brightred   # errors yell at you in red
+
+#color message brightcyan black  # informational messages, not mail
+#color search brightgreen black # hilite search patterns in the pager
+#color status brightyellow blue # status bar is yellow *on blue*
+#color tilde blue black  # ~'s after message body
+#color signature brightred black
+#color underline yellow black
+#color header cyan black ^(From|Subject): # Important headers
+#color body magenta black "(ftp|http)://[^ ]+"  # picks up URLs
+#color body magenta black [-a-z_0-9.]+@[-a-z_0-9.]+
