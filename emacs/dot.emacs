@@ -163,11 +163,8 @@
 
 
 ;; ----------------------------------------------
-;;; Text mode and Auto Fill mode
-;; The next two lines put Emacs into Text mode
-;; and Auto Fill mode, and are for writers who
-;; want to start writing prose rather than code.
-(setq-default fill-column 62)
+;; Auto Fill mode
+(setq-default fill-column 75)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'mail-mode-hook 'turn-on-auto-fill)
 (add-hook 'message-mode-hook 'auto-fill-mode)
@@ -197,7 +194,7 @@
 
 ;; -----------------------------------------------
 ;; tabs & indent
-(setq-default tab-width 4)
+(setq-default tab-width 8)
 (setq-default highlight-tabs t)
 (setq-default indent-tabs-mode nil)
 (setq cua-auto-tabify-rectangles nil)

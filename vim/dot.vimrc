@@ -1,5 +1,5 @@
 
-"colorscheme elflord
+colorscheme darkblue
 
 syntax on
 
