@@ -90,6 +90,10 @@ push <show-version>  # Shows mutt version at startup
 macro index \cv "T.\n;WN^T.\n"
 macro pager \cv "T.\n;WN^T.\n"
 
+# index collapsing
+bind index - collapse-thread
+bind index _ collapse-all
+
 #======================================================#
 #
 #set sidebar_visible=no
