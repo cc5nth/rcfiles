@@ -1,3 +1,7 @@
+
+# mind the whitespace
+alias sudo='sudo '
+
 #alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -11,7 +15,8 @@ alias fgrep='fgrep --color=auto'
 alias vv='emacsclient -t'
 alias em='emacsclient -t'
 alias emc='emacsclient -c'
-alias emacsserver='emacs --color=never --daemon'
+alias emacsd='emacs --color=never --daemon'
+alias nemacsd='emacs --color=never --daemon'
 alias nemacs='emacs --color=never'
 
 # ls
@@ -19,7 +24,7 @@ alias ls='ls -CF'
 alias la='ls --color=auto --group-directories-first'
 
 # transmission cli
-alias btrans-init="sudo systemctl start transmission"
-alias btrans-exit="sudo systemctl stop transmission"
-alias btrans-list="transmission-remote -l"
-alias btrans-add="transmission-remote -a"
+alias xbtinit="sudo systemctl start transmission"
+alias xbtexit="sudo systemctl stop transmission"
+alias xbtlist="transmission-remote -l"
+alias xbtadd="transmission-remote -a"
