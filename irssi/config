@@ -113,6 +113,8 @@ channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#kcao"; chatnet = "FreeNode"; autojoin = "No"; },
+  { name = "#tuna"; chatnet = "Ubuntu"; },
+  { name = "#archlinux-cn"; chatnet = "Ubuntu"; },
   { name = "#ubuntu-cn"; chatnet = "FreeNode"; },
   { name = "#archlinux"; chatnet = "FreeNode"; }
 );
@@ -287,6 +289,8 @@ hilights = ( { text = "kcaoxxx"; nick = "yes"; word = "yes"; } );
 ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#kcao" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#archlinux" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#archlinux-cn" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#tuna" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#ubuntu-cn" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#freenode" ); }
 );
