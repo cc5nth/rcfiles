@@ -214,17 +214,28 @@
 ;; c & cc
 ;(setq c-default-style "linux"
 ;      c-basic-offset 8)
-(add-hook 'c-mode-common-hook '(lambda () (c-set-style "linux")
-                                 (setq c-basic-offset 8)
-                                 (setq c-basic-indent 8)
-                                 (setq indent-tabs-mode t)
-                                 (setq tab-width 8)))
+(defun kcao-c-mode-hook ()
+  (c-set-style "linux")
+  (setq c-basic-offset 8)
+  (setq c-basic-indent 8)
+  (setq indent-tabs-mode t)
+  (setq tab-width 8))
+
+(defun kcao-c++-mode-hook ()
+  (setq c-basic-offset 4)
+  (setq c-basic-indent 4)
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4))
+
+;(add-hook 'c-mode-common-hook 'kcao-c-mode-hook)
+(add-hook 'c-mode-hook 'kcao-c-mode-hook)
+(add-hook 'c++-mode-hook 'kcao-c++-mode-hook)
 
 ;; python
-(add-hook 'python-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode nil)
-            (setq tab-width 4)))
+(defun kcao-python-mode-hook ()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4))
+(add-hook 'python-mode-hook 'kcao-pytho-mode-hook)
 
 ;; html
 

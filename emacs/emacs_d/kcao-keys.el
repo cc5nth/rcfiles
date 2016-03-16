@@ -28,9 +28,9 @@
 (add-hook 'text-mode-hook 'enable-kcao-pair-par)
 ;;(global-set-key (kbd "C-c (") 'kcao-pair-par) ;;
 
-(global-set-key (kbd "C-<f5>") 'redraw-display)
-(global-set-key (kbd "C-c |") 'rename-buffer)
-(global-set-key (kbd "C-c t") 'ansi-term)
-;(global-set-key (kbd "C-<f9>") 'ibus-toggle)
+(global-set-key (kbd "C-c <f5>") 'redraw-display)
+(global-set-key (kbd "C-c <f11>") 'rename-buffer)
+(global-set-key (kbd "C-c <f12>") 'ansi-term)
+;(global-set-key (kbd "C-c <f9>") 'ibus-toggle)
 
 (provide 'kcao-keys)
