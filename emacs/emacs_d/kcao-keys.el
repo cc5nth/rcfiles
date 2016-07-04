@@ -33,4 +33,6 @@
 (global-set-key (kbd "C-c <f12>") 'ansi-term)
 ;(global-set-key (kbd "C-c <f9>") 'ibus-toggle)
 
+(global-set-key (kbd "C-c m") 'set-mark-command)
+
 (provide 'kcao-keys)
