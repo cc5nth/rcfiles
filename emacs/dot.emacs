@@ -191,6 +191,8 @@
 (ido-mode t)
 ;(icomplete-mode t)
 
+;; new line at the end of file
+(setq require-final-newline t)
 
 ;; -----------------------------------------------
 ;; tabs & indent
@@ -235,7 +237,7 @@
 (defun kcao-python-mode-hook ()
   (setq indent-tabs-mode nil)
   (setq tab-width 4))
-(add-hook 'python-mode-hook 'kcao-pytho-mode-hook)
+(add-hook 'python-mode-hook 'kcao-python-mode-hook)
 
 ;; html
 
