@@ -21,4 +21,8 @@
   (interactive)
   (kcao-insert-tmpl-path "~/emacs/tmpl/c-main-func.txt"))
 
+(defun kcao-itmpl-html-index ()
+  (interactive)
+  (kcao-insert-tmpl-path "~/emacs/tmpl/html-index.txt"))
+
 (provide 'kcao-tmpl)
