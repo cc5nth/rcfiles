@@ -10,6 +10,14 @@
 
 (setq-default current-language-environment "UTF-8")
 
+;; encoding
+(setq default-buffer-file-coding-system 'utf-8-unix)
+(setq default-file-name-coding-system 'utf-8-unix)
+(setq default-keyboard-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq default-sendmail-coding-system 'utf-8-unix)
+(setq default-terminal-coding-system 'utf-8-unix)
+
 ;;; uncomment for CJK utf-8 support for non-Asian users
 ;; (require 'un-define)
 
