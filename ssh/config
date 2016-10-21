@@ -14,3 +14,4 @@ Host codingnet-akenn
 Host git.coding.net
      User git
      IdentityFile ~/.ssh/git.default.key
+
