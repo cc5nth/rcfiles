@@ -31,3 +31,6 @@ alias xbtadd="transmission-remote -a"
 
 # you-get
 alias youget.xx='python3 ~/tools/you-get/you-get'
+
+# media-omb
+alias dlna-enp1s0='mediatomb -e enp1s0'
