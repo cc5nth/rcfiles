@@ -28,3 +28,6 @@ alias xbtinit="sudo systemctl start transmission"
 alias xbtexit="sudo systemctl stop transmission"
 alias xbtlist="transmission-remote -l"
 alias xbtadd="transmission-remote -a"
+
+# you-get
+alias youget.xx='python3 ~/tools/you-get/you-get'
