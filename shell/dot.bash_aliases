@@ -15,17 +15,18 @@ alias fgrep='fgrep --color=auto'
 alias vv='emacsclient -t'
 alias em='emacsclient -t'
 alias emc='emacsclient -c'
-alias emacsd='emacs --color=never --daemon'
+alias emacsd='emacs --daemon'
 alias nemacsd='emacs --color=never --daemon'
 alias nemacs='emacs --color=never'
+alias emacs-exit='emacsclient -e "(kill-emacs)"'
 
 # ls
 alias ls='ls -CF'
 alias la='ls --color=auto --group-directories-first'
 
 # transmission cli
-alias xbtinit="sudo systemctl start transmission"
-alias xbtexit="sudo systemctl stop transmission"
+alias xbtinit="sudo systemctl start transmission-daemon"
+alias xbtexit="sudo systemctl stop transmission-daemon"
 alias xbtlist="transmission-remote -l"
 alias xbtadd="transmission-remote -a"
 
