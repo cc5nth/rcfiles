@@ -35,4 +35,8 @@
 
 (global-set-key (kbd "C-c m") 'set-mark-command)
 
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+(global-set-key (kbd "M-*") 'pop-tag-mark)
+
 (provide 'kcao-keys)
