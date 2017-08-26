@@ -134,6 +134,8 @@
 ;; code navigate:
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
+(setq cscope-database-regexps
+  '(("^/home/kcao/.*" (t ("-q" "-d")) t)  ))
 
 
 ;; -----------------------------------------------
@@ -155,6 +157,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.40")
  '(markdown-command "pandoc -f markdown -t html -s --mathjax ")
  '(markdown-command-needs-filename t))
 
@@ -260,3 +263,5 @@
 (load-file "~/.emacs.utils.el")
 (load-file "~/.emacs.org.el")
 ;(load-file "~/.erc.kcao.el")
+
+(require 'ecb)
