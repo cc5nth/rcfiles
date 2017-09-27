@@ -37,6 +37,7 @@
 ;;(set-foreground-color "black") ; Set emacs fg color
 
 (menu-bar-mode 0)
+(tool-bar-mode 0)
 ;; gui options
 (if (display-graphic-p)
     (progn
@@ -109,7 +110,7 @@
 (setq load-path (append load-path '("~/.emacs_d")))
 
 (require 'kcao-keys)
-
+(require 'kcao-tmpl)
 
 ;; -----------------------------------------------
 ;; utils
@@ -185,11 +186,11 @@
 ;; ----------------------------------------------
 ;; auto-complete
 ;; http://auto-complete.org/
-(add-to-list 'load-path "/opt/kcao/src/emacs/ac")
-(add-to-list 'load-path "/opt/kcao/src/emacs/fuzzy-el")
-(add-to-list 'load-path "/opt/kcao/src/emacs/popup-el")
+(add-to-list 'load-path "~/git/emacs/ac")
+(add-to-list 'load-path "~/git/emacs/fuzzy-el")
+(add-to-list 'load-path "~/git/emacs/popup-el")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/opt/kcao/src/emacs/ac/dict")
+(add-to-list 'ac-dictionary-directories "~/git/emacs/ac/dict")
 
 (ac-config-default)
 (setq ac-auto-start nil)
@@ -245,6 +246,9 @@
 (add-hook 'c-mode-hook 'kcao-c-mode-hook)
 (add-hook 'c++-mode-hook 'kcao-c++-mode-hook)
 
+(require 'kcao-font-lock)
+(add-hook 'c-mode-hook 'kcao-c-mode-font-lock-if0-hook)
+
 ;; python
 (defun kcao-python-mode-hook ()
   (setq indent-tabs-mode nil)
@@ -264,4 +268,9 @@
 (load-file "~/.emacs.org.el")
 ;(load-file "~/.erc.kcao.el")
 
-(require 'ecb)
+(setq cscope-program "gtags-cscope")
+(setq cscope-option-use-inverted-index t)
+;(setq cscope-option-kernel-mode t)
+
+;(require 'ecb)
+;(put 'set-goal-column 'disabled nil)
