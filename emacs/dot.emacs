@@ -133,7 +133,13 @@
 
 
 ;; code navigate:
+(require 'gtags)
+(setq gtags-suggested-key-mapping t)
+(add-hook 'c-mode-hook 'gtags-mode)
+
 (require 'xcscope)
+(setq cscope-program "gtags-cscope")
+(setq cscope-option-use-inverted-index t)
 (setq cscope-do-not-update-database t)
 (setq cscope-database-regexps
   '(("^/home/kcao/.*" (t ("-q" "-d")) t)  ))
@@ -229,12 +235,12 @@
 ;; c & cc
 ;(setq c-default-style "linux"
 ;      c-basic-offset 8)
-(defun kcao-c-mode-hook ()
-  (c-set-style "linux")
-  (setq c-basic-offset 8)
-  (setq c-basic-indent 8)
-  (setq indent-tabs-mode t)
-  (setq tab-width 8))
+;(defun kcao-c-mode-hook ()
+;  (c-set-style "linux")
+;  (setq c-basic-offset 8)
+;  (setq c-basic-indent 8)
+;  (setq indent-tabs-mode t)
+;  (setq tab-width 8))
 
 (defun kcao-c++-mode-hook ()
   (setq c-basic-offset 4)
@@ -243,8 +249,11 @@
   (setq tab-width 4))
 
 ;(add-hook 'c-mode-common-hook 'kcao-c-mode-hook)
-(add-hook 'c-mode-hook 'kcao-c-mode-hook)
+;(add-hook 'c-mode-hook 'kcao-c-mode-hook)
 (add-hook 'c++-mode-hook 'kcao-c++-mode-hook)
+
+; auto detect by file name
+(require 'kcao-coding-style)
 
 (require 'kcao-font-lock)
 (add-hook 'c-mode-hook 'kcao-c-mode-font-lock-if0-hook)
