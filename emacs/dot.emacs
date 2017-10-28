@@ -8,20 +8,54 @@
 (setq user-full-name "Ken Chen Cao")
 (setq user-mail-address "ken.ccao@outlook.com")
 
-(setq-default current-language-environment "UTF-8")
 
 ;; encoding
-(setq default-buffer-file-coding-system 'utf-8-unix)
-(setq default-file-name-coding-system 'utf-8-unix)
-(setq default-keyboard-coding-system 'utf-8-unix)
-(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
-(setq default-sendmail-coding-system 'utf-8-unix)
-(setq default-terminal-coding-system 'utf-8-unix)
+;; ----------------------------------------------
+;(prefer-coding-system 'utf-8)
+(setq-default current-language-environment "UTF-8")
+
+;; help, o, default-file-name-coding-system --> utf-8-unix
+;(setq file-name-coding-system 'gbk)
+
+;(setq default-buffer-file-coding-system 'utf-8-unix)
+;(setq default-keyboard-coding-system 'utf-8-unix)
+;(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+;(setq default-sendmail-coding-system 'utf-8-unix)
+;(setq default-terminal-coding-system 'utf-8-unix)
 
 ;;; uncomment for CJK utf-8 support for non-Asian users
 ;; (require 'un-define)
 
+;; solve org-mode table font size problem in Windows
+;(set-default-font "Consolas")
+;(set-fontset-font "fontset-default" 'chinese-gbk "微软雅黑")
+;
+;(setq face-font-rescale-alist '(("宋体" . 1.2)
+;                                ("微软雅黑" . 1.1)))
+
+;; file defaults
 ;; ----------------------------------------------
+(setq-default major-mode 'text-mode)
+
+;; save and backup
+(setq make-backup-files         nil) ; Don't want any backup files
+;(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+(setq auto-save-list-file-name  nil) ; Don't want any .saves files
+(setq auto-save-default         nil) ; Don't want any auto saving
+
+;; new line at the end of file
+(setq require-final-newline t)
+
+;; -----------------------------------------------
+;; tabs & indent
+(setq-default tab-width 8)
+(setq-default highlight-tabs t)
+(setq-default indent-tabs-mode nil)
+(setq cua-auto-tabify-rectangles nil)
+
+;; look and feel
+;; ----------------------------------------------
+;; interface
 ;; default to better frame titles
 (setq frame-title-format
       (concat  "%b - emacs@" (system-name)))
@@ -32,7 +66,6 @@
   '(height . 35)) ; Height set to 35 lines
    default-frame-alist))
 
-;; ----------------------------------------------
 ;;(set-background-color "white") ; Set emacs bg color
 ;;(set-foreground-color "black") ; Set emacs fg color
 
@@ -49,16 +82,9 @@
 (display-time-mode 1)
 (column-number-mode 1)
 
-(setq-default major-mode 'text-mode)
+;; mouse:
+(setq mouse-sel-retain-highlight t) ; Keep mouse high-lightening
 
-;; ----------------------------------------------
-;; save and backup
-(setq make-backup-files         nil) ; Don't want any backup files
-;(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
-(setq auto-save-list-file-name  nil) ; Don't want any .saves files
-(setq auto-save-default         nil) ; Don't want any auto saving
-
-;; -----------------------------------------------
 ;; default faces
 (set-face-attribute 'default nil
                     :inherit nil
@@ -87,15 +113,8 @@
 ;;(blink-cursor-mode 0)
 (setq x-stretch-cursor t)
 
-;; mouse:
-(setq mouse-sel-retain-highlight t) ; Keep mouse high-lightening
-
 ;; highlight modes
 (global-hl-line-mode 0) ;; current line
-
-;; syntax highlight
-;; is enabled by default since 22.1
-(global-font-lock-mode 0) ;; uncomment to disable
 
 ;; parenthesis
 (show-paren-mode 1)
@@ -106,50 +125,8 @@
 (set-face-attribute 'trailing-whitespace nil
                     :background "gray95")
 
+;; configurations
 ;; ----------------------------------------------
-(setq load-path (append load-path '("~/.emacs_d")))
-
-(require 'kcao-keys)
-(require 'kcao-tmpl)
-
-;; -----------------------------------------------
-;; utils
-
-;; diff: default to unified diffs
-(setq diff-switches "-u")
-
-;; spell:
-;;(setq-default ispell-program-name "aspell")
-
-;; search:
-(setq search-highlight t) ; Highlight search object
-(setq isearch-highlight t)
-(setq query-replace-highlight t) ; Highlight query object
-
-;; diary
-(setq diary-file "~/kcao/ediary")
-(setq diary-mail-addr "ken.ccao@outlook.com")
-;(add-hook 'diary-hook 'appt-make-list)
-
-
-;; code navigate:
-(require 'gtags)
-(setq gtags-suggested-key-mapping t)
-(add-hook 'c-mode-hook 'gtags-mode)
-
-(require 'xcscope)
-(setq cscope-program "gtags-cscope")
-(setq cscope-option-use-inverted-index t)
-(setq cscope-do-not-update-database t)
-(setq cscope-database-regexps
-  '(("^/home/kcao/.*" (t ("-q" "-d")) t)  ))
-
-
-;; -----------------------------------------------
-;; shell
-(ansi-color-for-comint-mode-on)
-
-;; -----------------------------------------------
 ;; Custom
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -164,12 +141,47 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.40")
- '(markdown-command "pandoc -f markdown -t html -s --mathjax ")
- '(markdown-command-needs-filename t))
+ ;'(ecb-options-version "2.40")
+ ;'(markdown-command "pandoc -f markdown -t html -s --mathjax ")
+ ;'(markdown-command-needs-filename t)
+ '(org-agenda-files (quote ("~/kcao/gtd-org/rh.org")) t))
+
+;; extra config
+(setq load-path (append load-path '("~/.emacs_d")))
+
+(require 'kcao-keys)
+(require 'kcao-tmpl)
+
+(require 'kcao-coding)
+
+(load-file "~/.emacs.utils.el")
+(load-file "~/.emacs.org.el")
+;(load-file "~/.erc.kcao.el")
 
 
-;; ----------------------------------------------
+;; utils
+;; -----------------------------------------------
+
+;; search:
+(setq search-highlight t) ; Highlight search object
+(setq isearch-highlight t)
+(setq query-replace-highlight t) ; Highlight query object
+
+;; diff: default to unified diffs
+(setq diff-switches "-u")
+
+;; spell:
+;;(setq-default ispell-program-name "aspell")
+
+;; diary
+(setq diary-file "~/kcao/ediary.org")
+(setq diary-mail-addr "ken.ccao@outlook.com")
+;(add-hook 'diary-hook 'appt-make-list)
+
+;; shell
+(ansi-color-for-comint-mode-on)
+
+;; abbrev
 ;;(setq default-abbrev-mode t)
 (read-abbrev-file "~/.abbrev_defs")
 (setq save-abbrevs t)
@@ -180,16 +192,12 @@
 (add-hook 'mail-mode-hook (lambda () (abbrev-mode 1)))
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 
-
-;; ----------------------------------------------
-;; Auto Fill mode
+;; auto fill mode
 (setq-default fill-column 75)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'mail-mode-hook 'turn-on-auto-fill)
 (add-hook 'message-mode-hook 'auto-fill-mode)
 
-
-;; ----------------------------------------------
 ;; auto-complete
 ;; http://auto-complete.org/
 (add-to-list 'load-path "~/git/emacs/ac")
@@ -202,84 +210,14 @@
 (setq ac-auto-start nil)
 (define-key ac-mode-map (kbd "C-c TAB") 'auto-complete)
 
-
-;; -----------------------------------------------
 ;; ido-mode.
 ;; since icomplete-mode is somehow annoying
 (require 'ido)
 (ido-mode t)
 ;(icomplete-mode t)
 
-;; new line at the end of file
-(setq require-final-newline t)
-
-;; -----------------------------------------------
-;; tabs & indent
-(setq-default tab-width 8)
-(setq-default highlight-tabs t)
-(setq-default indent-tabs-mode nil)
-(setq cua-auto-tabify-rectangles nil)
-
-
-;; make ENTER as newline-and-indent
-(defun set-newline-and-indent ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
-
-(add-hook 'lisp-mode-hook 'set-newline-and-indent)
-(add-hook 'python-mode-hook 'set-newline-and-indent)
-(add-hook 'c-mode-hook 'set-newline-and-indent)
-(add-hook 'sh-mode-hook 'set-newline-and-indent)
-
-
-;; -----------------------------------------------
-;; c & cc
-;(setq c-default-style "linux"
-;      c-basic-offset 8)
-;(defun kcao-c-mode-hook ()
-;  (c-set-style "linux")
-;  (setq c-basic-offset 8)
-;  (setq c-basic-indent 8)
-;  (setq indent-tabs-mode t)
-;  (setq tab-width 8))
-
-(defun kcao-c++-mode-hook ()
-  (setq c-basic-offset 4)
-  (setq c-basic-indent 4)
-  (setq indent-tabs-mode nil)
-  (setq tab-width 4))
-
-;(add-hook 'c-mode-common-hook 'kcao-c-mode-hook)
-;(add-hook 'c-mode-hook 'kcao-c-mode-hook)
-(add-hook 'c++-mode-hook 'kcao-c++-mode-hook)
-
-; auto detect by file name
-(require 'kcao-coding-style)
-
-(require 'kcao-font-lock)
-(add-hook 'c-mode-hook 'kcao-c-mode-font-lock-if0-hook)
-
-;; python
-(defun kcao-python-mode-hook ()
-  (setq indent-tabs-mode nil)
-  (setq tab-width 4))
-(add-hook 'python-mode-hook 'kcao-python-mode-hook)
-
-;; html
-
-
-;; -----------------------------------------------
-
 ;; -----------------------------------------------
 ;(server-start)
 
 ;; -----------------------------------------------
-(load-file "~/.emacs.utils.el")
-(load-file "~/.emacs.org.el")
-;(load-file "~/.erc.kcao.el")
-
-(setq cscope-program "gtags-cscope")
-(setq cscope-option-use-inverted-index t)
-;(setq cscope-option-kernel-mode t)
-
-;(require 'ecb)
-;(put 'set-goal-column 'disabled nil)
+;; the end
