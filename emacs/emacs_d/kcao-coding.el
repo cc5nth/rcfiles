@@ -75,14 +75,23 @@
 
 ;; code navigate
 ;; -----------------------------------------------
-(require 'gtags)
+;; gtags
 (setq gtags-suggested-key-mapping t)
-(add-hook 'c-mode-common-hook
-          (lambda () (gtags-mode)))
-(add-hook 'c-mode-common-hook
-          (lambda () (hs-minor-mode)))
+(setq gtags-auto-update nil)
 
-(require 'xcscope)
+(require 'gtags)
+
+(add-hook 'c-mode-hook
+          '(lambda () (gtags-mode 1)))
+(add-hook 'gtags-select-mode-hook
+          '(lambda ()
+             (setq hl-line-face 'underline)
+             (hl-line-mode 1)))
+
+(add-hook 'c-mode-hook
+          (lambda () (hs-minor-mode 1)))
+
+;; cscope
 (setq cscope-program "gtags-cscope")
 (setq cscope-do-not-update-database t)
 
@@ -92,6 +101,8 @@
 
 (setq cscope-database-regexps
       '(("^/home/kcao/.*" (t ("-q" "-d")) t)  ))
+
+(require 'xcscope)
 
 ;(require 'ecb)
 ;(put 'set-goal-column 'disabled nil)
