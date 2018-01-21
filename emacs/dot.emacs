@@ -147,7 +147,14 @@
  '(org-agenda-files (quote ("~/kcao/gtd-org/rh.org")) t))
 
 ;; extra config
-(setq load-path (append load-path '("~/.emacs_d")))
+;;(setq load-path (append load-path '("~/emacs/my-lisp")))
+(let ((default-directory  "~/emacs/my-lisp"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
+
+(let ((default-directory  "~/emacs/site-lisp"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 
 (require 'kcao-keys)
 (require 'kcao-tmpl)
