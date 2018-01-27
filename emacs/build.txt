@@ -1,0 +1,8 @@
+./configure --prefix=/home/kcao/local \
+--without-x \
+--without-jpeg \
+--without-selinux \
+--without-makeinfo \
+--with-gnutls=no \
+--with-sound=no \
+--enable-locallisppath=/usr/share/emacs/site-lisp

@@ -148,6 +148,11 @@
 
 ;; extra config
 ;;(setq load-path (append load-path '("~/emacs/my-lisp")))
+
+(let ((default-directory  "~/emacs/my-etc"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
+
 (let ((default-directory  "~/emacs/my-lisp"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
@@ -155,16 +160,6 @@
 (let ((default-directory  "~/emacs/site-lisp"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
-
-(require 'kcao-keys)
-(require 'kcao-tmpl)
-
-(require 'kcao-coding)
-
-(load-file "~/.emacs.utils.el")
-(load-file "~/.emacs.org.el")
-;(load-file "~/.erc.kcao.el")
-
 
 ;; utils
 ;; -----------------------------------------------
@@ -190,7 +185,7 @@
 
 ;; abbrev
 ;;(setq default-abbrev-mode t)
-(read-abbrev-file "~/.abbrev_defs")
+(read-abbrev-file "~/emacs/abbrev_defs")
 (setq save-abbrevs t)
 
 (add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))
@@ -222,6 +217,16 @@
 (require 'ido)
 (ido-mode t)
 ;(icomplete-mode t)
+
+;;;;;;;;;;
+(require 'kcao-keys)
+(require 'kcao-tmpl)
+
+(require 'kcao-coding)
+
+;(load-file "~/.emacs.utils.el")
+;(load-file "~/.emacs.org.el")
+;(load-file "~/.erc.kcao.el")
 
 ;; -----------------------------------------------
 ;(server-start)
